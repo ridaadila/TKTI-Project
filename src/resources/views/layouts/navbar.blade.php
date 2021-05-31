@@ -19,17 +19,17 @@
 
   <body class="bg-light">
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light">
         <div class="container container-fluid">
           <a href="{{ url('/') }}" class="navbar-brand">
             <span class="fs-4"><b> Gap Analyzer </b></span>
           </a>
 
           <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link" style="color:white; text-decoration: none;"> Beranda </a></li>
-            <li class="nav-item"><a href="#" class="nav-link" style="color:white; text-decoration: none;"> Tentang </a></li>
-            <li class="nav-item"><a href="#" class="nav-link" style="color:white; text-decoration: none;"> IT Process </a></li>
-            <li class="nav-item"><a href="#" class="nav-link" style="color:white; text-decoration: none;"> Akun </a></li>
+            <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Beranda </a></li>
+            <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Tentang </a></li>
+            <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> IT Process </a></li>
+            <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Akun </a></li>
           </ul>
         </div>
       </nav>
@@ -38,13 +38,21 @@
     <main>
 
       @yield('content')
-    
       
       <hr class="featurette-divider">
       
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      <footer class="p-3">
+        <div class="container container-fluid">
+          <p class="float-end">
+            <a href="#" style="color:black; text-decoration: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+                  <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+              </svg> 
+            </a>
+          </p>
+          <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </div>
       </footer>
     </main>
 
