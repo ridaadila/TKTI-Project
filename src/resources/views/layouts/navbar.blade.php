@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <title> Beranda </title>
+    <title> @yield('title') </title>
 
     {{-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/"> --}}
 
@@ -29,7 +29,12 @@
             <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Beranda </a></li>
             <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Tentang </a></li>
             <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> IT Process </a></li>
-            <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Akun </a></li>
+            <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color:black; text-decoration: none;"> Akun </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#"> Logout </a></li>
+              </ul>
+            </li> -->
           </ul>
         </div>
       </nav>
@@ -51,7 +56,7 @@
               </svg> 
             </a>
           </p>
-          <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          <p>&copy; 2021 Company, Inc.</p>
         </div>
       </footer>
     </main>
