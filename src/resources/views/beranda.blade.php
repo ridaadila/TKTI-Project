@@ -1,9 +1,10 @@
 @extends('layouts.navbar')
 
+@section('title', 'Beranda')
 @section('content')
 
 <!-- header ala ala corousel -->
-<div class="p-md-5 text-center text-white" style="width: 100%; background-color: #96bb7c;">
+<div class="images p-md-5 text-center text-white" style="width: 100%; height: 500px; background-image: url('/images/header.jpg') ">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h1 class="display-4 fw-normal"> Gap Analyzer </h1>
         <p class="lead fw-normal"> Kami menyediakan layanan Analisa Gap otomatis bagi perusahaan anda </p>
