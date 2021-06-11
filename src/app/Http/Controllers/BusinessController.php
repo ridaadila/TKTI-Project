@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 class BusinessController extends Controller
 {
     //
-    public function index(){
+    public function business(){
         return view('ITProcess.business');
+    }
+
+    public function goals(){
+        return view('ITProcess.itgoals');
     }
 }

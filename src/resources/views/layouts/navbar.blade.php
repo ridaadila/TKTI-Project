@@ -34,7 +34,7 @@
 
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="{{ url('/') }}" class="nav-link" style="color:black; text-decoration: none;"> Beranda </a></li>
-          <li class="nav-item"><a href="#" class="nav-link" style="color:black; text-decoration: none;"> Tentang </a></li>
+          <li class="nav-item"><a href="#gap" class="nav-link" style="color:black; text-decoration: none;"> Tentang </a></li>
           <li class="nav-item"><a href="{{ url('/business_goals') }}" class="nav-link" style="color:black; text-decoration: none;"> IT Process </a></li>
           <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color:black; text-decoration: none;"> Akun </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
