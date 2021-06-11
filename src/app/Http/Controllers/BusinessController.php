@@ -14,4 +14,8 @@ class BusinessController extends Controller
     public function goals(){
         return view('ITProcess.itgoals');
     }
+
+    public function final(){
+        return view('ITProcess.finalgoals');
+    }
 }

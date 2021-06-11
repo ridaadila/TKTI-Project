@@ -47,18 +47,18 @@
             </div>
 
             <div class="container">
-                <div class="container row gap-4">
-                    <div class="col rounded-3" style="background-color: white;">
-                        One of three columns
+                <div class="container row gap-5">
+                    <div class="col rounded-3" style="background-color: #9ad3bc;">
+                        <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
                     </div>
-                    <div class="col rounded-3" style="background-color: white;">
-                        One of three columns
+                    <div class="col rounded-3" style="background-color: #9ad3bc;">
+                         <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
                     </div>
-                    <div class="col rounded-3" style="background-color: white;">
-                        One of three columns
+                    <div class="col rounded-3" style="background-color: #9ad3bc;">
+                         <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
                     </div>
-                    <div class="col rounded-3" style="background-color: white;">
-                        One of three columns
+                    <div class="col rounded-3" style="background-color: #9ad3bc;">
+                         <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
                     </div>
                 </div>
             </div>
