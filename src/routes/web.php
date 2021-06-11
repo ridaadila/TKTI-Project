@@ -20,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
+Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
 
 Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, 'index']);
