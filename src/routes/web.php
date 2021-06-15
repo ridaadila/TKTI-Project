@@ -19,10 +19,14 @@ Route::get('/', function () {
     return view('beranda');
 });
 
+// login
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
+
+// register
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
+Route::post('/register/create', [App\Http\Controllers\RegisterController::class, 'create']);
+// Route::post('/register/create', 'RegisterController@create');
 
 Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, 'business']);
 Route::get('/IT_goals', [App\Http\Controllers\BusinessController::class, 'goals']);
 Route::get('/IT_process', [App\Http\Controllers\BusinessController::class, 'final']);
-

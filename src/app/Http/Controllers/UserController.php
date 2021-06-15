@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-use App\User;
-use PhpParser\Node\Stmt\Break_;
 
-class RegisterController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +13,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('registrasi');
+        //
     }
 
     /**
@@ -26,28 +21,9 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-
-        $request->validate([
-            'name' => 'required|min:3|max:50',
-            'username' => 'required|min:3|max:50',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
-
-        $passwordHash = Hash::make($request->password);
-
-        $users = new User;
-
-        // $users->user_id = Str::uuid();
-        $users->name = $request->name;
-        $users->name = $request->username;
-        $users->email = $request->email;
-        $users->password = $passwordHash;
-
-        $users->save();
-        return redirect('/login')->with('status', 'Data User Berhasil Ditambahkan!');
+        //
     }
 
     /**
