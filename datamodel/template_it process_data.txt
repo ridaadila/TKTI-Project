@@ -1,0 +1,6 @@
+// disesuaikan sendiri
+
+INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
+(1, 'Perencanaan strategis pada IT dijalankan', 0),
+(1, 'Manajemen di PIKTI memiliki kesadaran bahwa perencanaan strategis IT diperlukan untuk mendukung tujuan bisnis', 0);
+dst
