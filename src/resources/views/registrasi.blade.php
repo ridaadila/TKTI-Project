@@ -76,11 +76,6 @@
                     <div class="float-end my-3 d-grid ">
                         <button type="submit" class="btn btn-light" style="background-color: #96bb7c;">Submit</button>
                     </div>
-                    <!-- <div class="float-end my-3 d-grid col-5">
-                    <button type="submit" class="btn btn-light" style="background-color: #96bb7c; text-decoration: none;">
-                        <a href="{{ url('/') }}" style="color:aliceblue; text-decoration: none;"> Submit </a>
-                    </button>
-                </div> -->
                 </form>
             </div>
             <!-- <div class="text-center">
