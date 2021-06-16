@@ -18,6 +18,8 @@ class RegisterController extends Controller
      */
     public function index()
     {
+        $user =  DB::table('users')->get();
+        dump($user);
         return view('registrasi');
     }
 
@@ -58,7 +60,18 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $user = new User;
+
+        $user->NAMA_USER = $request->NAMA_USER;
+        $user->USERNAME = $request->USERNAME;
+        $user->NO_HANDPHONE = $request->NO_HANDPHONE;
+        $user->ALAMAT = $request->ALAMAT;
+        $user->EMAIL = $request->EMAIL;
+        $user->PASSWORD = $request->PASSWORD;
+
+        $user->save();
+        return redirect('/login');
     }
 
     /**

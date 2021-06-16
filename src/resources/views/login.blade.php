@@ -22,7 +22,13 @@
         <div class="col align-self-stretch">
             <div class="container container-fluid mt-5">
                 <h2 style="color: #373a40; text-decoration: none;"><b> Sign-In </b></h2>
-
+                @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+                @endif
+                <!-- <form class="user" method="post" action="/login/checkUser"> -->
+                <!-- @csrf -->
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control @error('EMAIL') is-invalid @enderror" style="background-color: #dddddd; text-decoration: none;" id="floatingInput" placeholder="name@example.com" name="EMAIL" value="{{ old('EMAIL') }}">
                     <label for="floatingInput" style="color:#536162; text-decoration: none;">Email address</label>
@@ -37,12 +43,11 @@
                     <div class="invalid-feedback">{{ $message }} </div>
                     @enderror
                 </div>
-
-                <div class="float-end my-3 d-grid col-5">
-                    <button type="submit" class="btn btn-light" style="background-color: #96bb7c; text-decoration: none;">
-                        <a href="{{ url('/') }}" style="color:aliceblue; text-decoration: none;"> Submit </a>
-                    </button>
+                <!-- submit -->
+                <div class="float-end my-3 d-grid ">
+                    <button type="submit" class="btn btn-light" style="background-color: #96bb7c;">Submit</button>
                 </div>
+                <!-- </form> -->
             </div>
         </div>
     </div>
