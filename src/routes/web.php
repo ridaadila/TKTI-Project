@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,11 @@ Route::get('/', function () {
 
 // login
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
+Route::post('/login', [App\Http\Controllers\LoginController::class, 'checkUser']);
 
 // register
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store']);
-// Route::post('/register/create', 'RegisterController@create');
 
 Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, 'business']);
 Route::get('/IT_goals', [App\Http\Controllers\BusinessController::class, 'goals']);
