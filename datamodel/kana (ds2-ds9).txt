@@ -1,4 +1,4 @@
-//19	DS2
+
 INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (19, 'Apakah perusahaan memiliki peraturan/ketetapan/SOP yang mendefinisikan tanggung jawab dan akuntabilitas dalam menjalankan proses IT', 0),
 (19, 'Apakah perusahaan memiliki kebijakan dan prosedur dalam melakukan kontrak dengan pihak ketiga', 0),
@@ -34,7 +34,6 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (19, 'Apakah ada pelaporan pencapaian tingkat layanan yang komprehensif dan terdefinisi terkait dengan kepuasan terhadap pihak ketiga', 5),
 (19, 'Apakah manajemen perusahaan dapat menyesuaikan proses akuisisi dan pemantauan layanan pihak ketiga berdasarkan pengukur kinerja', 5),
 
-//20	DS3
 (20, 'Manajemen menyadari bahwa proses bisnis utama mungkin memerlukan kinerja tingkat tinggi dari TI atau bahwa kebutuhan bisnis secara keseluruhan untuk layanan TI dapat melebihi kapasitas', 0),
 (20, 'Ada proses perencanaan kapasitas', 0),
 (20, 'Pengguna mencari solusi untuk kendala kinerja', 1),
@@ -70,7 +69,6 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (20, 'Metrik untuk mengukur kinerja dan kapasitas TI telah disesuaikan dengan hasil dan indikator kinerja untuk semua proses bisnis yang penting dan diukur secara konsisten', 5),
 (20, 'Manajemen menyesuaikan perencanaan kinerja dan kapasitas setelah melakukan analisis atas tindakan-tindakan yang dilakukan', 5),
 
-//22	DS5
 (22, 'Organisasi perusahaan menyadari pentingnya keamanan dari sistemnya', 0),
 (22, 'Ada pengaturan tanggung jawab dan akuntabilitas dalam pengamanan sistem', 0),
 (22, 'perusahaan memberikan support yang mendukung pengelolaan keamanan TI ', 0),
@@ -120,7 +118,6 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (22, 'Metrik untuk manajemen keamanan diukur, dikumpulkan dan dikomunikasikan', 5),
 (22, 'Manajemen memiliki langkah-langkah tersendiri untuk mengukur dan mengatur rencana kemanan sistem perusahaan dalam proses peningkatan keamanan secara berkelanjutan', 5),
 
-//23	DS6
 (23, 'perusahaan memiliki kelebihan dalam mengidentifikasi dan mengalokasikan biaya sehubungan dengan layanan informasi disediakan', 0),
 (23, 'perusahaan menyadari bahwa ada masalah yang harus ditangani sehubungan dengan akuntansi biaya, dan memang tidak ada komunikasi tentang masalah tersebut', 0),
 (23, 'Ada pemahaman umum tentang keseluruhan biaya untuk layanan informasi seperti adanya perincian biaya per pengguna, pelanggan, departemen , kelompok pengguna, fungsi layanan, proyek atau kiriman', 1),
@@ -153,7 +150,6 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (23, 'Apakah manajemen biaya disempurnakan ke tingkat praktik industri, berdasarkan hasil perbaikan berkelanjutan dan pembandingan dengan organisasi lain ?', 5),
 (23, 'Apakah manajemen meninjau tujuan dan metrik sebagai bagian dari proses perbaikan berkelanjutan dalam mendesain ulang sistem pengukuran biaya ?', 5),
 
-//24	DS7
 (24, 'Terdapat pelatihan atau program edukasi', 0),
 (24, 'Ada pembahasan internal tentang pentingnya pelatihan dan program edukasi staff', 0),
 (24, 'memiliki jadwal pelatihan dan program edukasi yang terlaksana dengan baik', 1),
@@ -186,7 +182,6 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (24, 'penggunanaan pelatihan eksternal sebagai panduan', 5),
 (24, 'pelatihan dan program pendidikan menggunakan IT yang terintegrasi', 5),
 
-//25	DS8
 (25, 'perusahaan belum memiliki pelayanan yang berguna untuk mengatasi masalah dan keluhan dari pelanggan maupun staff', 0),
 (25, 'Terdapat kekurangan yang fatal terkait manajemen resiko pada perusahaan', 0),
 (25, 'Terdapat kekurangan yang fatal terkait manajemen resiko pada perusahaan', 0),
@@ -213,7 +208,6 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (25, 'manajemen menggunakan sistem terintegrasi untuk melihat statistik kinerja dari proses manajemen insdiden dan fungsi meja layanan.', 5),
 (25, 'Proses telah disempurnakan ke tingkat praktik industri terbaik, berdasarkan hasil analisis indikator kinerja, peningkatan berkelanjutan, dan pembandingan dengan organisasi lain (dilakukan benchmark dengan kompetitor perusahaan)', 5),
 
-//26	DS9
 (26, 'Terdapat penghargaan terhadap benefit – benefit dalam sebuah proses untuk pelaporan dan pengelelolaan infrastruktur IT di perusahaan.', 0),
 (26, 'Apakah sudah ada kebutuhan akan manajemen konfigurasi?', 1),
 (26, 'Manajemen konfigurasi dasar sudah dilakukan secara individu.', 1),
@@ -241,4 +235,4 @@ INSERT INTO LIST_PERTANYAAN(ID_IT_PROCESS, DESKRIP_PERTANYAAN, LEVEL) VALUES
 (26, 'Terdapat integrasi penuh untuk proses yang berhubungan dan digunakan secara otomatis', 5),
 (26, 'Laporan audit memberikan informasi esensi hardware dan data software untuk perbaikan secara berkala.', 5),
 (26, 'Manajemen meramalkan perbaikan dan upgrade berdasarkan laporan analisa.', 5),
-(26, 'Penelusuran aset dan pemantauan terhadap aset IT secara infividual dan melindunginya upaya mencegah terjadinya pencurian dan penyalahgunaan dan perusakan', 5),
+(26, 'Penelusuran aset dan pemantauan terhadap aset IT secara infividual dan melindunginya upaya mencegah terjadinya pencurian dan penyalahgunaan dan perusakan', 5);
