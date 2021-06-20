@@ -10,28 +10,29 @@
 </div>
 
 <main>
-    <!-- tinggal diulang pakai foreach -->
+    @foreach ($data as $item)
     <div class="mx-5 mt-5">
         <div class="p-3 mb-4 rounded-3" style="background-color: #e4efe7;">
             <div class="container-fluid py-5">
                 <div class="row">
                     <div class="col-3">
-                        <h1 class="display-5 fw-bold"> [nama bagian bussiness goals] </h1>
+                        <h1 class="display-5 fw-bold"> {{$item->PERSPECTIVE}} </h1>
                     </div>
                     <div class="col-9">
                         <div class="row me-5">
-                            <div class="col-10">yayaya</div>
+                            @foreach($item->business as $dt)
+                            <div class="col-10">
+                                    {{$dt->DESC_BUSINESS}}
+                            </div>
                             <hr>
-                            <div class="col-10">yayaya</div>
-                            <hr>
-                            <div class="col-10">yayaya</div>
-                            <hr>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
     <!-- endforech -->
 </main>
 
