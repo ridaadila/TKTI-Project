@@ -16,9 +16,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
+Route::get('/', [App\Http\Controllers\BerandaController::class, 'index']);
 
 // login
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);

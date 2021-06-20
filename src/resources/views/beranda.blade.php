@@ -79,11 +79,21 @@
             <div class="col mx-3" style="background-color: #f6f6f6;">
                 <div class="container" style="color: #91c788;">
                     <p><b>1. PO - Plan and Organize</b></p>
+                <ul style="list-style-type: square">
+                    @foreach ($it_p as $item)
+                        <li>{{$item->KODE_IT}} : {{$item->IT_PROCESS}}</li>
+                    @endforeach
+                </ul>
                 </div>
             </div>
             <div class="col mb-3 " style="background-color: #f6f6f6;">
                 <div class="container" style="color: #91c788;">
                     <p><b>2. AI - Acquire and Implement</b></p>
+                    <ul style="list-style-type: square">
+                        @foreach ($it_a as $item)
+                            <li>{{$item->KODE_IT}} : {{$item->IT_PROCESS}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
@@ -91,11 +101,21 @@
             <div class="col mx-3 mb-3" style="background-color: #f6f6f6;">
                 <div class="container" style="color: #91c788;">
                     <p><b>3. DS - Deliver and Support</b></p>
+                    <ul style="list-style-type: square">
+                        @foreach ($it_ds as $item)
+                            <li>{{$item->KODE_IT}} : {{$item->IT_PROCESS}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
             <div class="col mb-3" style="background-color: #f6f6f6;">
                 <div class="container" style="color: #91c788;">
                     <p><b>4. ME - Monitor and Evaluate</b></p>
+                    <ul style="list-style-type: square">
+                        @foreach ($it_me as $item)
+                            <li>{{$item->KODE_IT}} : {{$item->IT_PROCESS}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
