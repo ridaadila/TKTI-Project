@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Perspective;
+use App\Goals;
 
 class BusinessController extends Controller
 {
@@ -35,7 +36,20 @@ class BusinessController extends Controller
                         'it_goals.it_goals as nama_it_goals'
                     )
                     ->get();
-        return view('ITProcess.itgoals', compact('perspective', 'it_goals'));
+        $temp = array();
+        foreach($it_goals as $val)
+        {
+            array_push($temp, $val->id_it_goals);
+        }
+
+        $proses = DB::table('mempunyai_3')
+                        ->join('it_process', 'it_process.id_it_process', 'mempunyai_3.id_it_process')
+                        ->whereIn('mempunyai_3.id_it_goals', $temp)
+                        ->select(
+                            'mempunyai_3.id_it_goals as id_goals',
+                             'it_process.kode_it'   )
+                        ->get();
+        return view('ITProcess.itgoals', compact('perspective', 'it_goals', 'temp', 'proses'));
     }
 
     public function final(){

@@ -34,35 +34,33 @@
         </div>
     </div>
 
-    
+    @foreach ($it_goals as $item)
     <div class="mx-5 mt-5">
         <div class="p-3 mb-4 rounded-3" style="background-color: #e4efe7;">
             <div class="row p-2">
                 <div class="col">
                     <div class="container">
-                        <h6><b> Judul pilihan business goals </b></h6>
+                        <h6><b>{{$item->id_it_goals}}) {{$item->nama_it_goals}} </b></h6>
                     </div>
                 </div>
             </div>
 
             <div class="container">
                 <div class="container row gap-5">
-                    <div class="col rounded-3" style="background-color: #9ad3bc;">
-                        <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
-                    </div>
-                    <div class="col rounded-3" style="background-color: #9ad3bc;">
-                         <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
-                    </div>
-                    <div class="col rounded-3" style="background-color: #9ad3bc;">
-                         <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
-                    </div>
-                    <div class="col rounded-3" style="background-color: #9ad3bc;">
-                         <h1 class="text-center" style="color: #faf9f9;"><b> PO2 </b></h1>
-                    </div>
+                    @foreach ($proses as $data)
+                        @if ($data->id_goals==$item->id_it_goals)
+                        <div class="col rounded-3" style="background-color: #9ad3bc;">
+                            <a href="">
+                                <h1 class="text-center" style="color: #faf9f9;"><b> {{$data->kode_it}} </b></h1>
+                            </a>
+                        </div> 
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
 
     
 </main>
