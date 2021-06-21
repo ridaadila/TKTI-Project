@@ -50,7 +50,7 @@
                     @foreach ($proses as $data)
                         @if ($data->id_goals==$item->id_it_goals)
                         <div class="col rounded-3" style="background-color: #9ad3bc;">
-                            <a href="">
+                            <a href="{{url('IT_process/' . $data->id_it_process)}}">
                                 <h1 class="text-center" style="color: #faf9f9;"><b> {{$data->kode_it}} </b></h1>
                             </a>
                         </div> 

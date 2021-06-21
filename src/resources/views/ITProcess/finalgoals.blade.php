@@ -5,7 +5,7 @@
 
 <div style="width: 100%; height: 50px; background-color: #bdd2b6;">
     <div class="container">
-        <p class="h4 pt-2 text-white"><b> PO10 : Manage Projects </b></p>
+        <p class="h4 pt-2 text-white"><b> {{$it_proses->kode_it}} : {{$it_proses->it_process}} </b></p>
     </div>
 </div>
 
@@ -16,61 +16,40 @@
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
                 <hr>
             </div>
+            @foreach ($level as $key=>$val)
             <div class="row mb-3">
                 <div class="col">
                     <div class="container">
-                        <h6><b> Level 0 </b></h6>
-                        <p>lallalalallallalalalal</p>
+                        <h6><b> Level {{$val}} </b></h6>
+                        @foreach ($data as $item)
+                        <ul style="list-style-type: square">
+                        @if ($item->level==$val)
+                        <li><p>{{$item->pertanyaan}}</p></li>
                         <div class="mb-2">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Not at all</label>
-                            </div>
+                                <input class="form-check-input" type="radio" name="inlineRadio1[]" id="inlineRadio1[]" value="0">
+                                <label class="form-check-label" for="inlineRadio1[]">Tidak Sama Sekali</label>
+                            </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
-                            </div>
+                                <input class="form-check-input" type="radio" name="inlineRadio2[]" id="inlineRadio2[]" value="0.33">
+                                <label class="form-check-label" for="inlineRadio2[]">Sedikit</label>
+                            </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
-                            </div>
+                                <input class="form-check-input" type="radio" name="inlineRadio3[]" id="inlineRadio3[]" value="0.66">
+                                <label class="form-check-label" for="inlineRadio3[]">Cukup Banyak</label>
+                            </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
-                            </div>
+                                <input class="form-check-input" type="radio" name="inlineRadio4[]" id="inlineRadio4[]" value="1">
+                                <label class="form-check-label" for="inlineRadio4[]">Sepenuhnya</label>
+                            </div> <div class="col-sm-2"></div>
                         </div>
+                        @endif
+                        </ul>
+                        @endforeach
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="container">
-                        <h6><b> Level 1 </b></h6>
-                        <p>lallalalallallalalalal</p>
-                        <div class="mb-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Not at all</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
-                            </div>
-                        </div>
-                        <p>lallalalallallalalalal</p>
-                        <div class="mb-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Not at all</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 

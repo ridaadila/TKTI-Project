@@ -47,12 +47,20 @@ class BusinessController extends Controller
                         ->whereIn('mempunyai_3.id_it_goals', $temp)
                         ->select(
                             'mempunyai_3.id_it_goals as id_goals',
-                             'it_process.kode_it'   )
+                             'it_process.kode_it',
+                             'it_process.id_it_process'   )
                         ->get();
         return view('ITProcess.itgoals', compact('perspective', 'it_goals', 'temp', 'proses'));
     }
 
-    public function final(){
-        return view('ITProcess.finalgoals');
+    public function final($id){
+        $level = [0,1,2,3,4,5];
+        $it_proses = DB::table('it_process')->where('id_it_process', $id)
+                            ->select('kode_it','it_process')->first();
+        $data = DB::table('list_pertanyaan')
+                ->where('id_it_process', $id)
+                ->select('list_pertanyaan.deskrip_pertanyaan as pertanyaan', 
+                        'list_pertanyaan.level as level')->get();
+        return view('ITProcess.finalgoals', compact('data','level','it_proses'));
     }
 }
