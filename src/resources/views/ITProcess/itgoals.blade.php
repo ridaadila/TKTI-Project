@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col">
                     <div class="container">
-                        <h5><b> Judul business goals </b></h5>
-                        <p>pilihan business goal</p>
+                        <h5><b> {{ $perspective->perspective}} </b></h5>
+                        <p>{{ $perspective->desc}}</p>
                     </div>
                 </div>
             </div>
@@ -24,18 +24,17 @@
             <div class="row mx-5">
                 <div class="col">
                     <div class="container">
-                        <div class="col-10">yayaya</div>
-                        <hr>
-                        <div class="col-10">yayaya</div>
-                        <hr>
-                        <div class="col-10">yayaya</div>
-                        <hr>
+                        @foreach ($it_goals as $item)
+                            <div class="col-10">{{$item->id_it_goals}})  {{$item->nama_it_goals}}</div>
+                            <hr>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    
     <div class="mx-5 mt-5">
         <div class="p-3 mb-4 rounded-3" style="background-color: #e4efe7;">
             <div class="row p-2">

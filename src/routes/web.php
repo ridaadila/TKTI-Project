@@ -27,5 +27,6 @@ Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store']);
 
 Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, 'business']);
-Route::get('/IT_goals', [App\Http\Controllers\BusinessController::class, 'goals']);
+
+Route::get('/IT_goals/{id}/{goals}', [App\Http\Controllers\BusinessController::class, 'goals']);
 Route::get('/IT_process', [App\Http\Controllers\BusinessController::class, 'final']);

@@ -20,8 +20,22 @@ class BusinessController extends Controller
         return view('ITProcess.business', compact('data'));
     }
 
-    public function goals(){
-        return view('ITProcess.itgoals');
+    public function goals($id, $goals){
+        $perspective = DB::table('perspective_goal')
+        ->join('business_goal', 'business_goal.id_perspective', 'perspective_goal.id_perspective')
+        ->where('business_goal.id_business', $goals)->where('business_goal.id_perspective', $id)
+        ->select('perspective_goal.perspective as perspective',
+        'business_goal.desc_business as desc')
+        ->first();
+        $it_goals = DB::table('mempunyai')->join('it_goals', 'it_goals.id_it_goals', 'mempunyai.id_it_goals')
+                    ->join('business_goal', 'business_goal.id_business', 'mempunyai.id_business')
+                    ->where('mempunyai.id_business', $goals)
+                    ->select(
+                        'it_goals.id_it_goals as id_it_goals',
+                        'it_goals.it_goals as nama_it_goals'
+                    )
+                    ->get();
+        return view('ITProcess.itgoals', compact('perspective', 'it_goals'));
     }
 
     public function final(){
