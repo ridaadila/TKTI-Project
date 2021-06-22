@@ -30,3 +30,4 @@ Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, '
 
 Route::get('/IT_goals/{id}/{goals}', [App\Http\Controllers\BusinessController::class, 'goals']);
 Route::get('/IT_process/{id}', [App\Http\Controllers\BusinessController::class, 'final']);
+Route::get('/IT_process/hitung/{id}', [App\Http\Controllers\BusinessController::class, 'hitung']);

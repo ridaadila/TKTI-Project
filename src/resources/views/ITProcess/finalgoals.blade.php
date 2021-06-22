@@ -12,7 +12,8 @@
 <main>
     <div class="mx-5 mt-4">
         <div class="p-3 mb-3 rounded-3" style="background-color: #e4efe7;">
-            <form action="">
+            <form method="GET" action="{{url('IT_process/hitung/' . $it_proses->kode_it)}}">
+                @csrf
             <div class="container">
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
                 <hr>
@@ -26,10 +27,10 @@
                         @foreach ($data as $item)
                         @if ($item->level==$val)
                         <p>{{$count}}) {{$item->pertanyaan}}</p>
+                        <input type="hidden" name="level[]" value="{{$item->level}}">
                         <div class="mb-2">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0">
-
                                 <label class="form-check-label" for="jawab[<?php print $count; ?>]">Tidak Sama Sekali</label>
                             </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
@@ -54,7 +55,7 @@
             @endforeach
             <div class="row">
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary btn-lg float-end">Kirim</button>
+                    <button type="submit" class="btn btn-primary btn-lg float-end">Kirim</button>
                 </div>
             </div>
         </form>

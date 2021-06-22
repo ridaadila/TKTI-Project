@@ -63,4 +63,13 @@ class BusinessController extends Controller
                         'list_pertanyaan.level as level')->get();
         return view('ITProcess.finalgoals', compact('data','level','it_proses'));
     }
+
+    public function hitung(Request $request, $id)
+    {
+        echo "jawab[1] : " . $request->jawab[1] . gettype($request->jawab[1]) . "\n";
+        echo "jawab[2] : " . $request->jawab[2] . "\n";
+        echo count($request->level) . "\n";
+        echo count($request->jawab) . "\n";
+        echo "id : " . $id . "\n";
+    }
 }
