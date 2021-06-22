@@ -16,6 +16,7 @@
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
                 <hr>
             </div>
+            <?php $count=1; ?>
             @foreach ($level as $key=>$val)
             <div class="row mb-3">
                 <div class="col">
@@ -27,21 +28,23 @@
                         <li><p>{{$item->pertanyaan}}</p></li>
                         <div class="mb-2">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio1[]" id="inlineRadio1[]" value="0">
-                                <label class="form-check-label" for="inlineRadio1[]">Tidak Sama Sekali</label>
+                                <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0">
+
+                                <label class="form-check-label" for="jawab[<?php print $count; ?>]">Tidak Sama Sekali</label>
                             </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio2[]" id="inlineRadio2[]" value="0.33">
-                                <label class="form-check-label" for="inlineRadio2[]">Sedikit</label>
+                                <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0.33">
+                                <label class="form-check-label" for="jawab[<?php print $count; ?>]">Sedikit</label>
                             </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio3[]" id="inlineRadio3[]" value="0.66">
-                                <label class="form-check-label" for="inlineRadio3[]">Cukup Banyak</label>
+                                <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0.66">
+                                <label class="form-check-label" for="jawab[<?php print $count; ?>]">Cukup Banyak</label>
                             </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio4[]" id="inlineRadio4[]" value="1">
-                                <label class="form-check-label" for="inlineRadio4[]">Sepenuhnya</label>
+                                <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="1">
+                                <label class="form-check-label" for="jawab[<?php print $count; ?>]">Sepenuhnya</label>
                             </div> <div class="col-sm-2"></div>
+                            <?php $count+=1 ?>
                         </div>
                         @endif
                         </ul>
