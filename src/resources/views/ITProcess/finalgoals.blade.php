@@ -12,6 +12,7 @@
 <main>
     <div class="mx-5 mt-4">
         <div class="p-3 mb-3 rounded-3" style="background-color: #e4efe7;">
+            <form action="">
             <div class="container">
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
                 <hr>
@@ -23,9 +24,8 @@
                     <div class="container">
                         <h6><b> Level {{$val}} </b></h6>
                         @foreach ($data as $item)
-                        <ul style="list-style-type: square">
                         @if ($item->level==$val)
-                        <li><p>{{$item->pertanyaan}}</p></li>
+                        <p>{{$count}}) {{$item->pertanyaan}}</p>
                         <div class="mb-2">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0">
@@ -47,12 +47,17 @@
                             <?php $count+=1 ?>
                         </div>
                         @endif
-                        </ul>
                         @endforeach
                     </div>
                 </div>
             </div>
             @endforeach
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary btn-lg float-end">Kirim</button>
+                </div>
+            </div>
+        </form>
         </div>
     </div>
 
