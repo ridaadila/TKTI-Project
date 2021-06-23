@@ -56,20 +56,140 @@ class BusinessController extends Controller
     public function final($id){
         $level = [0,1,2,3,4,5];
         $it_proses = DB::table('it_process')->where('id_it_process', $id)
-                            ->select('kode_it','it_process')->first();
+                            ->select('kode_it','it_process', 'id_it_process')->first();
         $data = DB::table('list_pertanyaan')
                 ->where('id_it_process', $id)
                 ->select('list_pertanyaan.deskrip_pertanyaan as pertanyaan', 
-                        'list_pertanyaan.level as level')->get();
+                        'list_pertanyaan.level as level',
+                        'list_pertanyaan.id_pertanyaan as id_pertanyaan')
+                        ->get();
         return view('ITProcess.finalgoals', compact('data','level','it_proses'));
     }
 
     public function hitung(Request $request, $id)
     {
-        echo "jawab[1] : " . $request->jawab[1] . gettype($request->jawab[1]) . "\n";
-        echo "jawab[2] : " . $request->jawab[2] . "\n";
-        echo count($request->level) . "\n";
-        echo count($request->jawab) . "\n";
-        echo "id : " . $id . "\n";
+        $hasilMaturity =  $this->hitungMaturityLevel($request->jawab, $request->level);
+        $round_data = (int)(round($hasilMaturity));
+        $getJson = $this->insertJson($request->pertanyaan, $request->jawab, $request->level ,$id, $hasilMaturity);
+        $hasilJawab = json_decode($getJson,true);
+        $idx_level = 0;
+        $it_proses = DB::table('it_process')->where('id_it_process', $id)
+        ->select('kode_it','it_process', 'id_it_process')->first();
+        $data = DB::table('list_pertanyaan')
+                ->where('id_it_process', $id)
+                ->select('list_pertanyaan.deskrip_pertanyaan as pertanyaan', 
+                        'list_pertanyaan.level as level',
+                        'list_pertanyaan.id_pertanyaan as id_pertanyaan')
+                        ->get();
+        $level = [0,1,2,3,4,5];
+        return view('ITProcess.hasilmaturity', compact('it_proses', 'idx_level', 'hasilJawab', 'level', 'data', 'hasilMaturity', 'round_data'));
+        
+    }
+
+    public function insertJson($pertanyaan, $jawab, $level ,$id, $maturity)
+    {
+        $temp_array = array();
+        $count_jawab = 1;
+        $count_level = 0;
+        foreach($pertanyaan as $id_pertanyaan) {
+            $data = array(
+                "nilai"=>(float)($jawab[$count_jawab]),
+                "level"=>(int)($level[$count_level])
+            );
+            $temp_array[$id_pertanyaan] = $data;
+            $count_jawab++;
+            $count_level++;
+        }
+        $json = json_encode($temp_array);
+        // echo gettype($json);
+        $insert = DB::table('jawaban_it_proses_kuesioner')->insert([
+            'id_it_process'=>$id,
+            'jawaban'=>$json,
+            'maturity_as_is'=>$maturity,
+        ]);
+
+        if($insert)
+        {
+            return $json;
+        }
+    }
+
+    public function hitungMaturityLevel($jawab, $level) 
+    {
+        $declare_level = ["0","1","2","3","4","5"];
+        $hasil_array = array();
+        $count_jawab = 1;
+        foreach($declare_level as $levelCobit)
+        {
+
+            $hitungPertanyaanLevel = 0;
+            $totalNilai = 0;
+
+            foreach($level as $levelJawab)
+            {
+                if($levelJawab==$levelCobit)
+                {
+                    $totalNilai += (float)($jawab[$count_jawab]);
+                    $count_jawab++;
+                    $hitungPertanyaanLevel++;
+                }
+
+            }
+
+            $data = array(
+                "total_nilai"=>$totalNilai,
+                "jum_pertanyaan"=>$hitungPertanyaanLevel
+            );
+            $hasil_array[$levelCobit] = $data;
+        }
+
+        return $this->getStepOne($hasil_array);
+    }
+
+    public function getStepOne($hasil_array)
+    {
+        $compliance = array();
+        foreach($hasil_array as $data)
+        {
+            array_push($compliance, ($data['total_nilai']/$data['jum_pertanyaan']));
+        }
+
+        $totalCompliance = 0;
+
+        foreach($compliance as $com)
+        {
+            $totalCompliance += $com;
+        }
+
+        return $this->getStepTwo($compliance,$totalCompliance);
+
+    }
+
+    public function getStepTwo($compliance,$totalCompliance)
+    {
+        $complianceStepTwo = array();
+
+        foreach($compliance as $data)
+        {
+            array_push($complianceStepTwo, $data/$totalCompliance);
+        }
+
+        return $this->getStepThree($complianceStepTwo);
+
+    }
+
+    public function getStepThree($complianceStepTwo)
+    {
+        $levelCobit = [0,1,2,3,4,5];
+        $index = 0;
+        $total = 0;
+        foreach($levelCobit as $level)
+        {
+            $hasilKali = $level*$complianceStepTwo[$index];
+            $total += $hasilKali;
+            $index++;
+        }
+
+        return $total;
     }
 }

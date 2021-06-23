@@ -12,7 +12,7 @@
 <main>
     <div class="mx-5 mt-4">
         <div class="p-3 mb-3 rounded-3" style="background-color: #e4efe7;">
-            <form method="GET" action="{{url('IT_process/hitung/' . $it_proses->kode_it)}}">
+            <form method="GET" action="{{url('IT_process/hitung/' . $it_proses->id_it_process)}}">
                 @csrf
             <div class="container">
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
@@ -27,6 +27,7 @@
                         @foreach ($data as $item)
                         @if ($item->level==$val)
                         <p>{{$count}}) {{$item->pertanyaan}}</p>
+                        <input type="hidden" name="pertanyaan[]" value="{{$item->id_pertanyaan}}">
                         <input type="hidden" name="level[]" value="{{$item->level}}">
                         <div class="mb-2">
                             <div class="form-check form-check-inline">
@@ -62,49 +63,7 @@
         </div>
     </div>
 
-    <div class="mx-5">
-        <div class="p-3 mb-3 rounded-3">
-            <div class="row align-items-start gap-5">
-                <div class="col align-self-stretch" style="background-color: #e4efe7;">
-                    <div class="container p-3">
-                    <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
-                    <div class="display-2"><b>2.68</b></div>
-                    <div class="h1"><b>( Level 3 )</b></div>
-                    </div>
-                </div>
-
-                <div class="col align-self-stretch" style="background-color: #e4efe7;">
-                    <div class="container p-3">
-                        <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mx-5">
-        <div class="p-3 mb-4 rounded-3" style="background-color: #e4efe7;">
-            <div class="row align-items-start">
-                <div class="col-10 align-self-stretch">
-                    <div class="container pt-3">
-                        <p>Terdapat empat IT Process (Proses Teknologi Informasi) yang dapat dihitung tingkat kematangannya :</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="container container-fluid">
-                            haha
-                        </div>
-                    </div>
-                    <div class="col-8">
-                        <div class="container container-fluid">
-                            haha
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     
 </main>
