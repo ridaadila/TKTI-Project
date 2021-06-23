@@ -81,14 +81,44 @@
                 <div class="col align-self-stretch" style="background-color: #e4efe7;">
                     <div class="container p-3">
                         <h5><b> Maturity Target (to be): </b></h5>
-                        <input type="number" name="maturity_target">
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-lg float-end">Kirim</button>
-                        </div>
+                        {{-- <input type="number" name="maturity_target"> {{$maturityTarget}} --}}
+                        <div class="display-2"><b>{{ $maturityTarget }}</b></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mx-5">
+        <div class="p-3 mb-4 rounded-3" style="background-color: #e4efe7;">
+            <div class="row align-items-start">
+                <div class="col-10 align-self-stretch">
+                    <div class="container pt-3">
+                        <p>Terdapat beberapa tahapan rekomendasi yang harus dilakukan :</p>
+                    </div>
+                </div>
+                <?php $i=1; ?>
+                @foreach ($unik_level as $unik)
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container container-fluid">
+                                <b>Perbaikan Tahap ke - {{ $i }}</b> <br> <br>
+                                <?php $no = 1; ?>
+                                @foreach ($rekomen as $rekomendasi)
+                                    @if (($rekomendasi['rekomendasi']!="") && ($rekomendasi['level']==$unik))
+                                       {{$no}}) {{$rekomendasi['pertanyaan']}} <b>Rekomendasi Perbaikan : {{$rekomendasi['rekomendasi']}}</b>
+                                       <br>
+                                    @else
+                                     <?php continue; ?>
+                                    @endif
+                                    <?php $no++; ?>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <br> <br>
+                    <?php $i++; ?>
+                @endforeach
             </div>
         </div>
     </div>

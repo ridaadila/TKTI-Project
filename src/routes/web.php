@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RekomendasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,4 @@ Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, '
 Route::get('/IT_goals/{id}/{goals}', [App\Http\Controllers\BusinessController::class, 'goals']);
 Route::get('/IT_process/{id}', [App\Http\Controllers\BusinessController::class, 'final']);
 Route::get('/IT_process/hitung/{id}', [App\Http\Controllers\BusinessController::class, 'hitung']);
+Route::get('/rekomendasi/{id}', [App\Http\Controllers\RekomendasiController::class, 'index']);

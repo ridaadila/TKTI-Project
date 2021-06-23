@@ -31,7 +31,7 @@
                         <input type="hidden" name="level[]" value="{{$item->level}}">
                         <div class="mb-2">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0">
+                                <input class="form-check-input" type="radio" name="jawab[<?php print $count; ?>]" id="jawab[<?php print $count; ?>]" value="0" required>
                                 <label class="form-check-label" for="jawab[<?php print $count; ?>]">Tidak Sama Sekali</label>
                             </div> <div class="col-sm-2"></div>
                             <div class="form-check form-check-inline">
