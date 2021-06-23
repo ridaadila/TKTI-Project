@@ -93,10 +93,10 @@ class RekomendasiController extends Controller
                     {
                         $rekomendasi = "Perlu ditingkatkan";
                     }
-                    // else
-                    // {
-                    //     $rekomendasi = "";
-                    // }
+                    if($data['nilai']===1)
+                    {
+                        continue;
+                    }
                 // }
 
                 $isi = array(
