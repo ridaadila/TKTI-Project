@@ -18,15 +18,16 @@ use App\Http\Controllers\RekomendasiController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\BerandaController::class, 'index']);
 
-/// login
-Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
-Route::post('/login', [App\Http\Controllers\LoginController::class, 'checkUser']);
 
-// register
-Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
-Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store']);
+Route::get('/', 'AuthController@showFormLogin')->name('login');
+Route::get('login', 'AuthController@showFormLogin')->name('login');
+Route::post('login', 'AuthController@login');
+Route::get('register', 'AuthController@showFormRegister')->name('register');
+Route::post('register', 'AuthController@register');
+Route::get('logout', 'AuthController@logout')->name('logout');
+
+Route::get('/beranda', 'BerandaController@index');
 
 Route::get('/business_goals', [App\Http\Controllers\BusinessController::class, 'business']);
 
