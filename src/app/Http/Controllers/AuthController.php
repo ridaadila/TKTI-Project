@@ -31,6 +31,10 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Authentication passed...
             return redirect()->intended('/beranda');
+        } else {
+            // Session::flash('errors', ['' => 'Login gagal! Silahkan ulangi beberapa saat lagi']);
+            // return redirect()->route('login');
+            echo 'gagal login';
         }
     }
 

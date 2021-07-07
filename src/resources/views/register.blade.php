@@ -2,85 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Coming Soon - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-10 mt-5">
-            <div class="card ">
-                <div class="card-header">
-                    <h3 class="text-center">Form Register</h3>
-                </div>
+    <!-- Background Video-->
+    <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets/mp4/bg.mp4" type="video/mp4" />
+    </video>
+    <!-- Masthead-->
+    <div class="masthead">
+        <div class="masthead-content text-white">
+            <div class="container-fluid px-4 px-lg-0">
+                <h1 class="fst-italic lh-1 mb-4 mt-2">Register</h1>
+                <!-- <p class="mb-5">We're working hard to finish the development of this site. Sign up below to receive updates and to be notified when we launch!</p> -->
+
                 <form action="{{ route('register') }}" method="post">
                     @csrf
-                    <div class="card-body ">
-                        @if(session('errors'))
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            Something it's wrong:
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        @endif
-                        <div class="container">
-                            <div class="row">
-                                <!-- <div class="col-6"> -->
-                                <div class="form-group col-4">
-                                    <label for=""><strong>Nama Lengkap</strong></label>
-                                    <input type="text" name="nama_user" class="form-control" placeholder="Nama Lengkap">
-                                </div>
-                                <!-- </div> -->
-                                <div class="form-group col-4">
-                                    <label for=""><strong>Username</strong></label>
-                                    <input type="text" name="username" class="form-control" placeholder="Username">
-                                </div>
-
-                            </div>
-
-                            <div class="form-group col-8">
-                                <label for=""><strong>no_handphone</strong></label>
-                                <input type="text" name="no_handphone" class="form-control" placeholder="Handphonep">
-                            </div>
-                            <div class="form-group col-8">
-                                <label for=""><strong>alamat</strong></label>
-                                <input type="text" name="alamat" class="form-control" placeholder="Alamat">
-                            </div>
-                            <div class="form-group col-8">
-                                <label for=""><strong>Email</strong></label>
-                                <input type="text" name="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-4">
-                                    <label for=""><strong>Password</strong></label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="form-group col-4">
-                                    <label for=""><strong>Konfirmasi Password</strong></label>
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
-                                </div>
-                            </div>
-                        </div>
-
-
+                    @if(session('errors'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Something it's wrong:
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="card-footer col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                        <p class="text-center">Sudah punya akun? <a href="{{ route('login') }}">Login</a> sekarang!</p>
+                    @endif
+                    <!-- @if (Session::has('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
+                    @if (Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('error') }}
+                    </div>
+                    @endif -->
+                    <div class="row input-group-newsletter">
+                        <div class="col-6"><input class="form-control" id="email" name="nama_user" type="text" placeholder="Nama Lengkap" aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                        <div class="col-6"><input class="form-control" id="email" name="username" type="text" placeholder="Username" aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                    </div>
+                    <!-- Email address input-->
+                    <div class="row input-group-newsletter">
+                        <div class="col-12 mt-3"><input class="form-control" id="email" name="email" type="email" placeholder="Email" aria-label="Email" data-sb-validations="required,email" /></div>
+                    </div>
+                    <div class="row input-group-newsletter">
+                        <div class="col-12 mt-3"><input class="form-control" id="email" name="no_handphone" type="text" placeholder="Handphone" aria-label="Handphone" data-sb-validations="required,email" /></div>
+                    </div>
+                    <div class="row input-group-newsletter">
+                        <div class="col-12 mt-3"><input class="form-control" id="email" name="alamat" type="text" placeholder="Alamat" data-sb-validations="required,email" /></div>
+                    </div>
+                    <div class="row input-group-newsletter">
+                        <div class="col-6 mt-3"><input class="form-control" id="password" name="password" type="password" placeholder="Password" aria-label="Enter password" data-sb-validations="required" /></div>
+                        <div class="col-6 mt-3"><input class="form-control" id="password" name="password_confirmation" type="password" placeholder="Konfirmasi password" aria-label="Enter password" data-sb-validations="required" /></div>
+                    </div>
+                    <div>
+                        <div class="col-auto mt-3"><button class="btn btn-primary" id="submitButton" type="submit">Register</button></div>
+                        <p class="text mt-5">Sudah punya akun? <a href="{{ route('login') }}">Login</a> sekarang!</p>
+                    </div>
+                    <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
+                    <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
+
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3 mt-2">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3 mt-2">Error sending message!</div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- Social Icons-->
+    <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
+    <div class="social-icons">
+        <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
+            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>

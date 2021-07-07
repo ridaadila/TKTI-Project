@@ -1,6 +1,6 @@
 @extends('layouts.navbar')
 
-@section('title', 'Berandas')
+@section('title', 'Beranda')
 @section('content')
 
 <!-- header ala ala corousel -->
