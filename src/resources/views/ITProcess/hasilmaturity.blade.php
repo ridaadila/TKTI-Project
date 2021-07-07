@@ -10,11 +10,12 @@
 </div>
 
 <form action="{{url('rekomendasi/' . $it_proses->id_it_process)}}">
+    <input name="id_jawaban" type="hidden" value="{{$getId}}">
 <main>
     <div class="mx-5 mt-4">
         <div class="p-3 mb-3 rounded-3" style="background-color: #e4efe7;">
             <form method="GET" action="{{url('IT_process/hitung/' . $it_proses->id_it_process)}}">
-                @csrf
+                {{ csrf_field() }}
             <div class="container">
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
                 <hr>

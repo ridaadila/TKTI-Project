@@ -71,6 +71,7 @@ class BusinessController extends Controller
         $hasilMaturity =  $this->hitungMaturityLevel($request->jawab, $request->level);
         $round_data = (int)(round($hasilMaturity));
         $getJson = $this->insertJson($request->pertanyaan, $request->jawab, $request->level ,$id, $hasilMaturity);
+        $getId = $this->insertGetId($id, $getJson, $hasilMaturity);
         $hasilJawab = json_decode($getJson,true);
         $idx_level = 0;
         $it_proses = DB::table('it_process')->where('id_it_process', $id)
@@ -82,7 +83,7 @@ class BusinessController extends Controller
                         'list_pertanyaan.id_pertanyaan as id_pertanyaan')
                         ->get();
         $level = [0,1,2,3,4,5];
-        return view('ITProcess.hasilmaturity', compact('it_proses', 'idx_level', 'hasilJawab', 'level', 'data', 'hasilMaturity', 'round_data'));
+        return view('ITProcess.hasilmaturity', compact('getId', 'it_proses', 'idx_level', 'hasilJawab', 'level', 'data', 'hasilMaturity', 'round_data'));
         
     }
 
@@ -101,8 +102,15 @@ class BusinessController extends Controller
             $count_level++;
         }
         $json = json_encode($temp_array);
+
+        return $json;
         // echo gettype($json);
-        $insert = DB::table('jawaban_it_proses_kuesioner')->insert([
+        
+    }
+
+    public function insertGetId($id, $json, $maturity)
+    {
+        $insert = DB::table('jawaban_it_proses_kuesioner')->insertGetId([
             'id_it_process'=>$id,
             'jawaban'=>$json,
             'maturity_as_is'=>$maturity,
@@ -110,7 +118,7 @@ class BusinessController extends Controller
 
         if($insert)
         {
-            return $json;
+            return $insert;
         }
     }
 

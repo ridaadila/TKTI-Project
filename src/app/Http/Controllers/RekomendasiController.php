@@ -32,8 +32,18 @@ class RekomendasiController extends Controller
                         'list_pertanyaan.id_pertanyaan as id_pertanyaan')
                         ->get();
         $level = [0,1,2,3,4,5];
+        $insert = $this->insertData($hasilRekomen, $maturityTarget, $request->id_jawaban);
+
         return view('ITProcess.hasilrekomen', compact('unik_level', 'it_proses', 'idx_level', 'hasilJawab', 'rekomen', 'level', 'data', 'hasilMaturity', 'maturityTarget', 'round_data'));
         
+    }
+
+    public function insertData($hasilRekomen, $maturityTarget, $id)
+    {
+        DB::table('jawaban_it_proses_kuesioner')->where('id_jawaban', $id)->update([
+            'maturity_target'=>$maturityTarget,
+            'rekomendasi'=>$hasilRekomen
+        ]);
     }
 
     public function insertJson($pertanyaan, $jawab, $level)
@@ -79,7 +89,7 @@ class RekomendasiController extends Controller
             // {
                 $asLevel = (int)(floor($hasilMaturity));
                 $targetLevel = (int)(floor($maturity_target));
-                if($data['level']<$targetLevel) {
+                if($data['level']<=$targetLevel) {
                     // echo "data nilai : ". $data['nilai'] . "\n";
                     $rekomendasi = "";
                     if((int)($data['nilai'])===0) {
@@ -116,9 +126,6 @@ class RekomendasiController extends Controller
 
         $fix_hasil = json_encode($hasil_json);
         return $fix_hasil;
-        // echo $fix_hasil;
-        // echo "Maturity as is : " . $asLevel . "\n";
-        // echo "Maturity target : " . $targetLevel;
     }
 
     public function getLevelUnique($rekomen)

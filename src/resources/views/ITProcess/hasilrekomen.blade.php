@@ -14,7 +14,7 @@
     <div class="mx-5 mt-4">
         <div class="p-3 mb-3 rounded-3" style="background-color: #e4efe7;">
             <form method="GET" action="{{url('IT_process/hitung/' . $it_proses->id_it_process)}}">
-                @csrf
+                {{ csrf_field() }}
             <div class="container">
                 <h5><b> Kuisioner Tingkat Kematangan Saat Ini (as is): </b></h5>
                 <hr>
@@ -98,12 +98,15 @@
                     </div>
                 </div>
                 <?php $i=1; ?>
+                <?php $no = 1;?>
                 @foreach ($unik_level as $unik)
                     <div class="row">
                         <div class="col-12">
                             <div class="container container-fluid">
-                                <b>Perbaikan Tahap ke - {{ $i }}</b> <br> <br>
-                                <?php $no = 1; ?>
+                                @if ($no==1)
+                                    <b>Perbaikan Tahap ke - {{ $i }}</b> <br> <br>
+                                @endif
+                                
                                 @foreach ($rekomen as $rekomendasi)
                                     @if (($rekomendasi['rekomendasi']!="") && ($rekomendasi['level']==$unik))
                                        {{$no}}) {{$rekomendasi['pertanyaan']}} <b>Rekomendasi Perbaikan : {{$rekomendasi['rekomendasi']}}</b>
@@ -117,7 +120,10 @@
                         </div>
                     </div>
                     <br> <br>
-                    <?php $i++; ?>
+                    @if ($unik>=$round_data)
+                        <?php $i++; ?>
+                        <?php $no = 1;?>
+                    @endif
                 @endforeach
             </div>
         </div>
