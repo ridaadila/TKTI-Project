@@ -23,10 +23,10 @@
                         <div class="row me-5">
                             @foreach($item->business as $dt)
                             <div class="col-10">
-                                <a class="text-decoration-none" style="color:white; text-decoration: none;" href="{{url('IT_goals/' . $item->ID_PERSPECTIVE . '/' . $dt->ID_BUSINESS)}}">
+                                <a class="text-decoration-none" style="color: blue; text-decoration: none;" href="{{url('IT_goals/' . $item->ID_PERSPECTIVE . '/' . $dt->ID_BUSINESS)}}">
                                     {{-- <input type="hidden" name="id_business" value="{{$dt->ID_BUSINESS}}"> --}}
                                     {{$dt->DESC_BUSINESS}}
-                                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    {{-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> --}}
                                 </a>
                             </div>
                             <hr>
