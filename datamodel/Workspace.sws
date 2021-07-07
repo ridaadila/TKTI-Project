@@ -4,8 +4,8 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{FCDC7B36-0BF6-42EC-BAFD-1C9780859EB5}" Name="Gap Analysis" Selected="Yes" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="Gap Analysis.cdm"/>
-		<Model ID="{A55E1980-B598-4A26-8B99-E2EDF5D315FC}" Name="Gap Analysis" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Gap Analysis.pdm"/>
+		<Model Expanded="Yes" ID="{FCDC7B36-0BF6-42EC-BAFD-1C9780859EB5}" Name="Gap Analysis" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="Gap Analysis.cdm"/>
+		<Model ID="{A55E1980-B598-4A26-8B99-E2EDF5D315FC}" Name="Gap Analysis" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Gap Analysis.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
