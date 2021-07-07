@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\RegisterController;
+// use Updated upstream;
 use App\Http\Controllers\RekomendasiController;
 
 /*
@@ -19,7 +20,7 @@ use App\Http\Controllers\RekomendasiController;
 
 Route::get('/', [App\Http\Controllers\BerandaController::class, 'index']);
 
-// login
+/// login
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login']);
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'checkUser']);
 
