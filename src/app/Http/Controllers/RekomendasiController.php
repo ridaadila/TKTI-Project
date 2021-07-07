@@ -93,15 +93,15 @@ class RekomendasiController extends Controller
                     // echo "data nilai : ". $data['nilai'] . "\n";
                     $rekomendasi = "";
                     if((int)($data['nilai'])===0) {
-                        $rekomendasi = "Perlu dilakukan usaha";
+                        $rekomendasi = "Harus diimplementasikan";
                     }
                     if($data['nilai']===0.33)
                     {
-                        $rekomendasi = "Perlu melakukan/menerapkan";
+                        $rekomendasi = "Harus melakukan/menerapkan";
                     }
                     if($data['nilai']===0.66)
                     {
-                        $rekomendasi = "Perlu ditingkatkan";
+                        $rekomendasi = "Harus ditingkatkan";
                     }
                     if($data['nilai']===1)
                     {
