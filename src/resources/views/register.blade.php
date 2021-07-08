@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Coming Soon - Start Bootstrap Theme</title>
+    <title>Register</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -99,9 +99,9 @@
     <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
     <div class="social-icons">
         <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-dark m-3" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-dark m-3" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark m-3" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
     <!-- Bootstrap core JS-->
